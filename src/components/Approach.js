@@ -33,64 +33,69 @@ const Approach = () => {
   };
 
   return (
-    <section id='approach' className='pt-16'>
-    <div className="bg-gray-100 p-8">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-semibold text-[#003049] text-center mb-6" style={{ fontFamily: 'Helvetica, Arial', fontSize: '24pt' }}>
-          Our Comprehensive Approach
-        </h2>
-        <div className="space-y-4">
-          {content.map((item) => (
-            <div
-              key={item.id}
-              className={`rounded-lg overflow-hidden shadow-md ${
-                expandedSection === item.id ? 'bg-[#FB8500]' : 'bg-white border-black border-2'
-              }`}
-            >
-              {/* Header with title and toggle button */}
-              <div
-                onClick={() => toggleSection(item.id)}
-                className="flex justify-between items-center px-6 py-4 cursor-pointer"
-                style={{ fontFamily: 'Helvetica, Arial', fontSize: '18pt' }}
-              >
-                <h3
-                  className={`text-2xl font-semibold ${
-                    expandedSection === item.id ? 'text-white' : 'text-[#003049]'
-                  }`}
-                  style={{ fontWeight: 'bold' }}
-                >
-                  {String(item.id).padStart(2, '0')} {item.title}
-                </h3>
-                <span
-                  className={`text-2xl font-semibold ${
-                    expandedSection === item.id ? 'text-white' : 'text-[#003049]'
-                  }`}
-                >
-                  {expandedSection === item.id ? '-' : '+'}
-                </span>
-                
-              </div>
-              {/* Content description */}
-              {expandedSection === item.id && (
-                <div className="px-6 py-4 text-white" style={{ fontFamily: 'Helvetica, Arial', fontSize: '14pt' }}>
-                  <hr className='border-black'/>
-                  <p>{item.description}</p>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        {/* Button at the bottom */}
-        <div className="flex items-center pt-2">
-          <button
-            className="bg-[#F58220] hover:bg-[#E07B00] text-[#0B254C] font-bold text-md py-2 px-6 rounded-md transition duration-300 ease-in-out shadow-md"
-            onClick={() => alert("Assessment Started")}
+    <section id="approach" className="pt-16">
+      <div className="bg-gray-100 p-8">
+        <div className="max-w-4xl mx-auto">
+          <h2
+            className="text-2xl font-semibold text-[#003049] text-center mb-6"
+            style={{ fontFamily: 'Helvetica, Arial', fontSize: '24pt' }}
           >
-            Start an Assessment
-          </button>
+            Our Comprehensive Approach
+          </h2>
+          <div className="space-y-8"> {/* Increased space between sections */}
+            {content.map((item) => (
+              <div
+                key={item.id}
+                className={`rounded-lg overflow-hidden shadow-md ${
+                  expandedSection === item.id ? 'bg-[#FB8500]' : 'bg-white border-black border-2'
+                }`}
+              >
+                {/* Header with title and toggle button */}
+                <div
+                  onClick={() => toggleSection(item.id)}
+                  className="flex justify-between items-center px-6 py-4 cursor-pointer"
+                  style={{ fontFamily: 'Helvetica, Arial', fontSize: '18pt' }}
+                >
+                  <h3
+                    className={`text-2xl font-semibold ${
+                      expandedSection === item.id ? 'text-white' : 'text-[#003049]'
+                    }`}
+                    style={{ fontWeight: 'bold' }}
+                  >
+                    {String(item.id).padStart(2, '0')} {item.title}
+                  </h3>
+                  <span
+                    className={`text-2xl font-semibold ${
+                      expandedSection === item.id ? 'text-white' : 'text-[#003049]'
+                    }`}
+                  >
+                    {expandedSection === item.id ? '-' : '+'}
+                  </span>
+                </div>
+                {/* Content description */}
+                {expandedSection === item.id && (
+                  <div
+                    className="px-6 py-4 text-white"
+                    style={{ fontFamily: 'Helvetica, Arial', fontSize: '14pt' }}
+                  >
+                    <hr className="border-black mb-4" /> {/* Added bottom margin */}
+                    <p>{item.description}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          {/* Button at the bottom */}
+          <div className="flex items-center justify-center pt-6">
+            <button
+              className="bg-[#F58220] hover:bg-[#E07B00] text-[#0B254C] font-bold text-md py-2 px-6 rounded-md transition duration-300 ease-in-out shadow-md"
+              onClick={() => alert("Assessment Started")}
+            >
+              Start an Assessment
+            </button>
+          </div>
         </div>
       </div>
-    </div>
     </section>
   );
 };
