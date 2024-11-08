@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Apply global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+/* Body font styles */
+body {
+  font-family: 'Montserrat', 'Arial', sans-serif; /* Apply Montserrat as primary and Arial as fallback */
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Code font styles */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Default section padding */
+section {
+  padding: 2rem;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+  section {
+    padding: 1rem;
+  }
+}
